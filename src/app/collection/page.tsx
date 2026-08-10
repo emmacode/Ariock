@@ -2,30 +2,30 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+// import { useState } from "react";
 import { products } from "@/src/data/products";
 
 export default function CollectionPage() {
   const whatsappNumber = "2349068909759";
-  const [gridCols, setGridCols] = useState(4);
+  // const [gridCols, setGridCols] = useState(4);
 
   const handleProductClick = (product: (typeof products)[0]) => {
     const message = encodeURIComponent(product.whatsappMessage);
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
   };
 
-  const getGridClass = () => {
-    switch (gridCols) {
-      case 2:
-        return "grid-cols-1 sm:grid-cols-2";
-      case 3:
-        return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
-      case 4:
-        return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
-      default:
-        return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
-    }
-  };
+  // const getGridClass = () => {
+  //   switch (gridCols) {
+  //     case 2:
+  //       return "grid-cols-1 sm:grid-cols-2";
+  //     case 3:
+  //       return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
+  //     case 4:
+  //       return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
+  //     default:
+  //       return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
+  //   }
+  // };
 
   return (
     <div className="min-h-screen bg-[#edebe854]">
@@ -50,7 +50,7 @@ export default function CollectionPage() {
         <div className="flex items-center justify-between mb-6">
           <p className="text-sm text-gray-600">{products.length} Products</p>
           {/* Grid View Toggle */}
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <button
               onClick={() => setGridCols(2)}
               className={`w-10 h-10 border flex items-center justify-center rounded-md transition-colors border-[#E0E0E0] ${
@@ -90,12 +90,12 @@ export default function CollectionPage() {
                 <div className={`w-0.5 h-4 ${gridCols === 4 ? "bg-dark" : "bg-[#d2d2d3]"}`}></div>
               </div>
             </button>
-          </div>
-
-          
+          </div> */}
         </div>
 
-        <div className={`grid ${getGridClass()} gap-6`}>
+        <div
+          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6`}
+        >
           {products.map((product) => (
             <div key={product.id} className="group cursor-pointer">
               <div className="relative overflow-hidden">

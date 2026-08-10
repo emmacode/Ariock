@@ -25,13 +25,15 @@ export default function Header() {
 
   return (
     <>
-      <header className="bg-[#edebe8] border-b border-gray-100 sticky top-0 z-50">
+      <header className="bg-[#edebe8] border-b border-[#d5d4d2] sticky top-0 z-50">
         <nav className="container flex items-center mx-auto h-14 px-6 md:h-[72px]">
           <div className="flex items-center justify-between w-full">
             {/* Mobile: Hamburger + Logo */}
             <div className="flex items-center gap-4 md:hidden">
               <button
-                onClick={() => isMenuOpen ? handleCloseMenu() : setIsMenuOpen(true)}
+                onClick={() =>
+                  isMenuOpen ? handleCloseMenu() : setIsMenuOpen(true)
+                }
                 className="text-gray-700"
               >
                 <svg
@@ -72,13 +74,13 @@ export default function Header() {
                 href="/#products"
                 className="text-gray-700 hover:text-dark transition"
               >
-                Shop
+                Browse
               </Link>
               <Link
                 href="/faq"
                 className="text-gray-700 hover:text-dark transition"
               >
-                Faq
+                FAQs
               </Link>
             </div>
 
@@ -136,15 +138,14 @@ export default function Header() {
           />
 
           {/* Drawer */}
-          <div className={`fixed top-0 left-0 h-full w-80 bg-white z-[70] md:hidden overflow-y-auto ${
-            isClosing ? "animate-slide-out-left" : "animate-slide-in-left"
-          }`}>
+          <div
+            className={`fixed top-0 left-0 h-full w-80 bg-white z-[70] md:hidden overflow-y-auto ${
+              isClosing ? "animate-slide-out-left" : "animate-slide-in-left"
+            }`}
+          >
             {/* Close Button */}
             <div className="flex justify-end p-6">
-              <button
-                onClick={handleCloseMenu}
-                className="text-gray-700"
-              >
+              <button onClick={handleCloseMenu} className="text-gray-700">
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -177,7 +178,7 @@ export default function Header() {
                   onClick={() => setIsShopOpen(!isShopOpen)}
                   className="flex items-center justify-between w-full py-3 text-dark hover:text-gray-600 transition font-light"
                 >
-                  <span>Shop</span>
+                  <span>Browse</span>
                   <Plus
                     className={`w-5 h-5 transition-transform ${
                       isShopOpen ? "rotate-45" : ""
@@ -202,7 +203,7 @@ export default function Header() {
                 className="block py-3 text-dark hover:text-gray-600 transition font-light"
                 onClick={handleCloseMenu}
               >
-                Faq
+                FAQs
               </Link>
             </div>
 
