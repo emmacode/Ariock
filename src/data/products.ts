@@ -177,13 +177,6 @@ export const products: Product[] = [
     whatsappMessage: 'Hi! I\'m interested in the Modern Dining Chair Set',
   },
   {
-    id: '24',
-    name: 'Scandinavian Dining Chairs',
-    category: 'dining',
-    image: '/furniture/24.png',
-    whatsappMessage: 'Hi! I\'m interested in the Scandinavian Dining Chairs',
-  },
-  {
     id: '26',
     name: 'Minimalist Dining Chairs',
     category: 'dining',

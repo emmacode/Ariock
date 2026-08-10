@@ -39,6 +39,7 @@ export default function Home() {
             src={heroImages[currentImageIndex]}
             alt="Hero"
             fill
+            sizes="100vw"
             className="object-contain transition-opacity duration-1000"
             priority
           />
@@ -109,6 +110,7 @@ export default function Home() {
             src="/furniture/8.png"
             alt="Outdoor Furniture"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-contain"
           />
         </div>
@@ -139,6 +141,7 @@ export default function Home() {
             src="/furniture/1.png"
             alt="Dining Space"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-contain"
           />
         </div>
@@ -182,6 +185,7 @@ export default function Home() {
                       src={product.image}
                       alt={product.name}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                   </div>
