@@ -71,40 +71,48 @@ export default function FAQPage() {
       <div className="container mx-auto px-6 pb-20">
         <div className="max-w-4xl mx-auto space-y-2">
           {categories.map((category, index) => (
-            <div key={index} className="bg-white border-b">
+            <div key={index} className="border-b">
               {/* Category Header */}
               <button
                 onClick={() => toggleCategory(category.name)}
-                className="w-full px-6 py-5 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                className="w-full px-6 py-5 flex items-center justify-between hover:bg-primary transition-colors"
               >
                 <span className="text-[13px] md:text-base font-medium tracking-wide">
                   {category.name}
                 </span>
-                {openCategory === category.name ? (
-                  <Minus className="w-5 h-5 text-dark" />
-                ) : (
-                  <Plus className="w-5 h-5 text-dark" />
-                )}
+                <div className="transition-transform duration-200">
+                  {openCategory === category.name ? (
+                    <Minus className="w-5 h-5 text-dark" />
+                  ) : (
+                    <Plus className="w-5 h-5 text-dark" />
+                  )}
+                </div>
               </button>
 
               {/* Category Content */}
-              {openCategory === category.name && (
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  openCategory === category.name
+                    ? "max-h-[2000px] opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
                 <div className="px-6 pb-4">
                   <div className="space-y-3">
                     {category.items.map((item) => (
                       <div
                         key={item.id}
-                        className="border-l-2 border-gray-200 pl-4"
+                        className="border-l-2 border-primary pl-4"
                       >
                         <button
                           onClick={() => toggleFAQ(item.id)}
                           className="w-full text-left py-2 flex items-start justify-between group"
                         >
-                          <span className="text-sm text-gray-700 group-hover:text-dark transition-colors pr-4">
+                          <span className="text-sm text-black transition-colors pr-4">
                             {item.question}
                           </span>
                           <svg
-                            className={`w-4 h-4 text-gray-400 transform transition-transform flex-shrink-0 mt-0.5 ${
+                            className={`w-4 h-4 text-black transform transition-transform duration-200 flex-shrink-0 mt-0.5 ${
                               openFaqId === item.id ? "rotate-180" : ""
                             }`}
                             fill="none"
@@ -119,18 +127,24 @@ export default function FAQPage() {
                             />
                           </svg>
                         </button>
-                        {openFaqId === item.id && (
+                        <div
+                          className={`overflow-hidden transition-all duration-200 ease-in-out ${
+                            openFaqId === item.id
+                              ? "max-h-96 opacity-100"
+                              : "max-h-0 opacity-0"
+                          }`}
+                        >
                           <div className="pt-2 pb-3">
-                            <p className="text-sm text-gray-600 leading-relaxed">
+                            <p className="text-xs text-gray-600 leading-relaxed">
                               {item.answer}
                             </p>
                           </div>
-                        )}
+                        </div>
                       </div>
                     ))}
                   </div>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>

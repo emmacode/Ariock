@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { products } from "@/src/data/products";
 import { whyChooseUs } from "@/src/data/whyChooseUs";
 import { Testimonials } from "../components/Testimonials";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   const whatsappNumber = "2349068909759";
@@ -47,13 +48,14 @@ export default function Home() {
         <div className="absolute inset-0 z-20 flex items-end justify-center px-4 pb-12 md:p-12 text-white">
           <div className="max-w-4xl space-y-4 md:space-y-6">
             <p className="text-xs md:text-sm tracking-widest uppercase">
-              Quality Furniture
+              Curated For Every Space
             </p>
             <h1 className="text-3xl md:text-6xl font-bold">
-              REFRESH YOUR SPACE
+              Furnish Smarter. Save More.
             </h1>
             <p className="text-sm md:text-lg mx-auto max-w-2xl">
-              Source quality furniture from trusted global suppliers
+              Source premium furniture directly from trusted global suppliers
+              and save up to 50% compared to local market prices.
             </p>
             <div className="flex gap-4">
               <Link
@@ -83,20 +85,20 @@ export default function Home() {
               key={i}
               className="flex items-center gap-9 md:gap-12 px-6 whitespace-nowrap"
             >
-              <span className="text-base font-bold px-5 tracking-wide">
-                DESKS & TABLES
+              <span className="text-base text-dark font-bold px-5 tracking-wide">
+                Tables & Desks
               </span>
-              <span className="text-base font-bold px-5 tracking-wide">
-                OFFICE CHAIRS
+              <span className="text-base text-dark font-bold px-5 tracking-wide">
+                Ergonomic Furniture
               </span>
-              <span className="text-base font-bold px-5 tracking-wide">
-                GAMING
+              <span className="text-base text-dark font-bold px-5 tracking-wide">
+                Ergonomic Furniture
               </span>
-              <span className="text-base font-bold px-5 tracking-wide">
-                DINING
+              <span className="text-base text-dark font-bold px-5 tracking-wide">
+                Offices
               </span>
-              <span className="text-base font-bold px-5 tracking-wide">
-                ACCESSORIES
+              <span className="text-base text-dark font-bold px-5 tracking-wide">
+                Tech Accessories
               </span>
             </div>
           ))}
@@ -120,12 +122,19 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-white">
             Why Choose Ariock Spaces?
           </h2>
-          <ul className="list-disc pl-5 space-y-2">
-            {whyChooseUs.slice(0, 4).map((item) => (
-              <li key={item.id} className="text-white font-light text-sm">
-                {item.title}
-              </li>
-            ))}
+          <ul className="pl-5 space-y-2">
+            {/* {whyChooseUs.slice(0, 4).map((item) => ( */}
+            <li className="text-white font-light text-sm">✓ Save up to 50%</li>
+            <li className="text-white font-light text-sm">
+              ✓ Trusted Global Suppliers
+            </li>
+            <li className="text-white font-light text-sm">
+              ✓ Transparent Pricing
+            </li>
+            <li className="text-white font-light text-sm">
+              ✓ Delivery Across Nigeria
+            </li>
+            {/* ))} */}
           </ul>
           <Link
             href="/faq"
@@ -149,16 +158,19 @@ export default function Home() {
         {/* Refresh Your Space */}
         <div className="bg-dark p-8 md:py-12 md:px-[100px] flex flex-col gap-5 justify-center h-[400px] md:h-[500px] order-4">
           <h2 className="text-3xl md:text-4xl font-bold text-white">
-            Refresh Your Space
+            From One Chair to Complete Spaces
           </h2>
           <p className="text-sm text-white/80 max-w-md">
-            Source quality furniture from trusted global suppliers
+            Whether you&apos;re furnishing your home, setting up an office,
+            opening a café, or delivering a commercial project, Ariock Spaces
+            sources quality furniture through our trusted global supplier
+            network -&gt; from sourcing to delivery.
           </p>
           <Link
             href="/collection"
             className="inline-block bg-white text-dark px-6 h-10 flex items-center text-sm font-medium w-fit btn-slide"
           >
-            Shop now
+            Get Started
           </Link>
         </div>
       </section>
@@ -167,12 +179,15 @@ export default function Home() {
       <section id="products" className="py-16 md:py-20 bg-[#a9a39b08]">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between mb-12">
-            <h2 className="text-xl md:text-3xl font-light">Ariock offers...</h2>
+            <h2 className="text-xl md:text-3xl font-light">
+              Shop by Collection
+            </h2>
             <Link
               href="/collection"
-              className="text-xs md:text-sm border md:border-0 h-10 px-6 flex items-center font-light hover:underline"
+              className="text-xs gap-2 md:text-sm border border-dark h-10 px-6 flex items-center font-light"
             >
-              View all
+              <span>View all</span>
+              <ArrowRight />
             </Link>
           </div>
 
