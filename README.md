@@ -2,24 +2,6 @@
 
 A modern, responsive landing page for Ariock Spaces, a furniture procurement company helping individuals, businesses, retailers, and interior designers source quality furniture from trusted global suppliers.
 
-## Features
-
-- ✨ Modern, clean design with Ariock brand colors (#1A1A1A, #F6BC66, #FFFFFF)
-- 📱 Fully responsive mobile design
-- 🛋️ Product catalog with category filtering (Desks, Chairs, Gaming Chairs, Dining Chairs, Accessories)
-- 💬 WhatsApp integration for product orders
-- ❓ Comprehensive FAQ page
-- 📄 Terms of Service page
-- ⭐ Customer testimonials section
-- 🎯 "Why Choose Us" section
-
-## Tech Stack
-
-- **Framework:** Next.js 16.3.0 with App Router
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS v4
-- **Font:** Geist Sans & Geist Mono
-
 ## Project Structure
 
 ```
