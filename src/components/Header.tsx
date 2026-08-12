@@ -21,7 +21,7 @@ export default function Header() {
       setIsMenuOpen(false);
       setIsClosing(false);
       setIsShopOpen(false);
-    }, 300); // Match animation duration
+    }, 300);
   };
 
   return (
