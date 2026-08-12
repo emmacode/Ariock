@@ -4,16 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { products } from "@/src/data/products";
-import { whyChooseUs } from "@/src/data/whyChooseUs";
 import { Testimonials } from "../components/Testimonials";
 import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   const whatsappNumber = "2349068909759";
   const heroImages = [
-    "/furniture/2.png",
-    "/furniture/3.png",
-    "/furniture/4.png",
+    "/furniture/Electric-Desk.png",
+    "/furniture/Electric-Desk2.png",
+    "/furniture/Fluff-Duffel.png",
   ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -43,6 +42,7 @@ export default function Home() {
             sizes="100vw"
             className="object-contain transition-opacity duration-1000"
             priority
+            unoptimized
           />
         </div>
         <div className="absolute inset-0 z-20 flex items-end justify-center px-4 pb-12 md:p-12 text-white">
@@ -109,11 +109,13 @@ export default function Home() {
         {/* Image 1 */}
         <div className="relative h-[400px] md:h-[500px] overflow-hidden order-1 md:order-2">
           <Image
-            src="/furniture/8.png"
+            src="/furniture/workspace-setup.png"
             alt="Outdoor Furniture"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-contain"
+            priority
+            unoptimized
           />
         </div>
 
@@ -147,11 +149,13 @@ export default function Home() {
         {/* Image 2 */}
         <div className="relative h-[400px] md:h-[500px] overflow-hidden order-3">
           <Image
-            src="/furniture/1.png"
+            src="/furniture/Twinie-Center-Table.png"
             alt="Dining Space"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-contain"
+            unoptimized
+            priority
           />
         </div>
 
@@ -192,42 +196,47 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.slice(5, 9).map((product) => (
-              <div key={product.id} className="group cursor-pointer">
-                <div className="relative overflow-hidden">
-                  <div className="aspect-square relative">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
+            {["32", "3", "10", "35"]
+              .map((id) => products.find((p) => p.id === id))
+              .filter((product): product is typeof products[0] => product !== undefined)
+              .map((product) => (
+                <div key={product.id} className="group cursor-pointer">
+                  <div className="relative overflow-hidden">
+                    <div className="aspect-square relative">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className="object-contain transition-transform duration-500 group-hover:scale-110"
+                        priority
+                        unoptimized
+                      />
+                    </div>
+
+                    {/* Overlay on hover */}
+                    <div className="absolute inset-0 rounded-md bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                    {/* Button at bottom of image - shows on hover */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                      <button
+                        onClick={() => handleProductClick(product)}
+                        className="w-full bg-white btn-slide text-dark py-3 rounded-full text-xs font-medium transition-all duration-300 hover:bg-primary"
+                      >
+                        {/* Order on WhatsApp */}
+                        Place Order
+                      </button>
+                    </div>
                   </div>
 
-                  {/* Overlay on hover */}
-                  <div className="absolute inset-0 rounded-md bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                  {/* Button at bottom of image - shows on hover */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                    <button
-                      onClick={() => handleProductClick(product)}
-                      className="w-full bg-white btn-slide text-dark py-3 rounded-full text-xs font-medium transition-all duration-300 hover:bg-primary"
-                    >
-                      {/* Order on WhatsApp */}
-                      Place Order
-                    </button>
+                  <div className="p-4">
+                    <p className="text-xs text-gray-500 mb-1 uppercase tracking-wide">
+                      ARIOCK
+                    </p>
+                    <h3 className="text-sm font-medium mb-2">{product.name}</h3>
                   </div>
                 </div>
-
-                <div className="p-4">
-                  <p className="text-xs text-gray-500 mb-1 uppercase tracking-wide">
-                    ARIOCK
-                  </p>
-                  <h3 className="text-sm font-medium mb-2">{product.name}</h3>
-                </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </section>

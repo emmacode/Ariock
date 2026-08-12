@@ -19,10 +19,6 @@ export default function FAQPage() {
     setOpenFaqId(openFaqId === id ? null : id);
   };
 
-  const whatsappNumber = "2349068909759";
-  const whatsappLink = `https://wa.me/${whatsappNumber}`;
-
-  // Group FAQs into categories
   const categories = [
     {
       name: "WHY CHOOSE ARIOCK SPACES",
@@ -48,7 +44,6 @@ export default function FAQPage() {
 
   return (
     <div className="bg-[#edebe854]">
-      {/* Breadcrumb */}
       <div className="container mx-auto px-6 py-4">
         <div className="text-[13px] text-gray-600">
           <Link href="/" className="hover:underline">
