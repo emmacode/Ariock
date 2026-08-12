@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const whatsappNumber = "2349068909759";
-  const email = "hello@ariock-spaces.com";
+  const email = "hello@ariock.space";
 
   return (
     <footer className="bg-dark text-white">
@@ -95,7 +95,10 @@ export default function Footer() {
               <p className="text-gray-400">✉️ {email}</p>
             </div>
             <div className="flex gap-4 mt-6">
-              <a href="#" className="text-gray-400 hover:text-white transition">
+              <a
+                href="https://www.instagram.com/ariokspaces?utm_source=qr"
+                className="text-gray-400 hover:text-white transition"
+              >
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"

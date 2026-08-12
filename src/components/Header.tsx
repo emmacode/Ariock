@@ -12,8 +12,8 @@ export default function Header() {
 
   const whatsappNumber = "2349068909759";
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
-  const email = "support@ariock.com";
-  const phone = "+234-809-675-3355";
+  const email = "support@ariock.space";
+  const phone = "+234-906-890-9759";
 
   const handleCloseMenu = () => {
     setIsClosing(true);
