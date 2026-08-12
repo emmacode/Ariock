@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Plus } from "lucide-react";
+import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,15 +52,27 @@ export default function Header() {
                 </svg>
               </button>
               <Link href="/" className="flex items-center">
-                <span className="text-2xl font-bold tracking-tight">
+                {/* <span className="text-2xl font-bold tracking-tight">
                   Ariock
-                </span>
+                </span> */}
+                <Image
+                  src="/furniture/ariock-logo.svg"
+                  width={55}
+                  height={55}
+                  alt="ariock space logo"
+                />
               </Link>
             </div>
 
             {/* Desktop Logo */}
             <Link href="/" className="hidden md:flex items-center">
-              <span className="text-3xl font-bold tracking-tight">Ariock</span>
+              {/* <span className="text-3xl font-bold tracking-tight">Ariock</span> */}
+              <Image
+                src="/furniture/ariock-logo.svg"
+                width={80}
+                height={80}
+                alt="ariock space logo"
+              />
             </Link>
 
             {/* Desktop Menu */}
