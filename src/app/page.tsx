@@ -42,7 +42,6 @@ export default function Home() {
             sizes="100vw"
             className="object-contain transition-opacity duration-1000"
             priority
-            unoptimized
           />
         </div>
         <div className="absolute inset-0 z-20 flex items-end justify-center px-4 pb-12 md:p-12 text-white">
@@ -115,7 +114,6 @@ export default function Home() {
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-contain"
             priority
-            unoptimized
           />
         </div>
 
@@ -154,7 +152,6 @@ export default function Home() {
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-contain"
-            unoptimized
             priority
           />
         </div>
@@ -198,7 +195,10 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {["32", "3", "10", "35"]
               .map((id) => products.find((p) => p.id === id))
-              .filter((product): product is typeof products[0] => product !== undefined)
+              .filter(
+                (product): product is (typeof products)[0] =>
+                  product !== undefined,
+              )
               .map((product) => (
                 <div key={product.id} className="group cursor-pointer">
                   <div className="relative overflow-hidden">
@@ -210,7 +210,6 @@ export default function Home() {
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         className="object-contain transition-transform duration-500 group-hover:scale-110"
                         priority
-                        unoptimized
                       />
                     </div>
 
